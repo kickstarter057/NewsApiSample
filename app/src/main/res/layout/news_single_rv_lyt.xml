@@ -1,0 +1,48 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.sample.myapplication.view.homepage.model.Article" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="16dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                loadImage="@{data.urlToImage}"
+                android:id="@+id/img"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#20000000"
+                    android:padding="8dp"
+                    android:text="@{data.title}"
+                    android:textColor="@color/text_col"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/roboto_slab"
+                    tools:text="WHO says first alerted to virus by its office, not China - Times of India" />
+
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
