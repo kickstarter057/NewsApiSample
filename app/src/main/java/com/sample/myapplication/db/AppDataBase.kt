@@ -9,7 +9,10 @@ import com.sample.myapplication.utility.AppConstant.APP_DATABASE
 @Database(entities = [Article::class], version = 1)
 abstract class AppDataBase : RoomDatabase() {
 
+    abstract fun getHeadlinesDao(): HeadlinesDao
+
     companion object {
+        @Volatile
         private var mInstance: AppDataBase? = null
 
         fun getAppDatabase(context: Context): AppDataBase? {
